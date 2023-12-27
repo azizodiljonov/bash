@@ -24,7 +24,7 @@ if [[ $ask -eq 1 ]]; then
     fi   
 else
     if [[ $ask -eq 2 ]]; then
-    read -p Write the name of user: username
+    read -p "Write the name of user: " username
     
     #deleting user
     sudo deluser $username
