@@ -16,13 +16,13 @@ if [[ $ask -eq 1 ]]; then
 
     echo "User '$username' has been created with password '$password'"
     read -p "Do you want to add user to sudo group? (y/n): " sudoadd
-    if [[ $sudoadd -eq "y" ]] 
-        sudo usermod -aG sudo $username
-        echo "User '$username' has been added to 'sudo' group!"
-    else
-        exit 1
-    fi   
-else
+        if [[ $sudoadd -eq "y" ]]; then
+            sudo usermod -aG sudo $username
+            echo "User '$username' has been added to 'sudo' group!"
+        elif [[ $sudoadd -ne "y"]]; then
+            echo "Done!"
+            exit 1
+elif
     if [[ $ask -eq 2 ]]; then
     read -p "Write the name of user: " username
     
